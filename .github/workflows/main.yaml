@@ -16,6 +16,12 @@ jobs:
         with:
           lfs: true
 
+      # ✅ Git LFS 강제 다운로드 (LFS 오류 해결)
+      - name: Setup Git LFS
+        run: |
+          git lfs install
+          git lfs pull
+
       # ✅ 기존 Artifacts 삭제 (이전 빌드 삭제)
       - name: Delete old artifacts
         uses: geekyeggo/delete-artifact@v2
